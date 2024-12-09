@@ -1,25 +1,25 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 type ProdutoType = {
-  id: number;
-  nome: string;
-  preco: number;
-  imagem: string;
-};
+  id: number
+  nome: string
+  preco: number
+  imagem: string
+}
 
 type Props = {
-  produtos: ProdutoType[];
-  favoritos: ProdutoType[];
-  adicionarAoCarrinho: (id: number) => void;
-};
+  produtos: ProdutoType[]
+  favoritos: ProdutoType[]
+  adicionarAoCarrinho: (id: number) => void
+}
 
 const ProdutosWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   margin: 20px;
-`;
+`
 
 const ProdutoCard = styled.div`
   border: 1px solid #ddd;
@@ -56,7 +56,7 @@ const ProdutoCard = styled.div`
       background-color: #0056b3;
     }
   }
-`;
+`
 
 const Produtos = ({ produtos, favoritos, adicionarAoCarrinho }: Props) => {
   return (
@@ -66,12 +66,13 @@ const Produtos = ({ produtos, favoritos, adicionarAoCarrinho }: Props) => {
           <img src={produto.imagem} alt={produto.nome} />
           <h3>{produto.nome}</h3>
           <p>R$ {produto.preco.toFixed(2)}</p>
-          <button onClick={() => adicionarAoCarrinho(produto.id)}>Adicionar ao Carrinho</button>
+          <button onClick={() => adicionarAoCarrinho(produto.id)}>
+            Adicionar ao Carrinho
+          </button>
         </ProdutoCard>
       ))}
     </ProdutosWrapper>
-  );
-};
+  )
+}
 
-export default Produtos;
-
+export default Produtos
